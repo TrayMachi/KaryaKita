@@ -76,7 +76,7 @@ body {
 
 .page-transition {
   opacity: 0;
-  background: black;
+  background: #E5E2F6;
   transform: translate(40px);
   filter: blur(20px);
 }

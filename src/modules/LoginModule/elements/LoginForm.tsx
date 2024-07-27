@@ -60,11 +60,14 @@ const LoginForm = () => {
   return (
     <Form {...form}>
       <div className="flex flex-col justify-center items-center">
-        <h2 className="text-[50px] text-secondary-foreground font-extrabold drop-shadow-glow">
-          Masuk
-        </h2>
+        <div className="w-[450px]">
+          <h2 className="text-[40px] font-poppins text-white font-extrabold drop-shadow-glow">
+            Masuk ke akun
+          </h2>
+          <p className="text-[16px] text-white pt-2 pb-14 font-poppins">Masukkan kredensial yang valid untuk mengakses seluruh fitur KaryaKita</p>
+        </div>
         <form
-          className="flex flex-col justify-center items-start md:gap-8 gap-6 z-10 w-full h-full bg-primary-foreground p-8 rounded-xl"
+          className="flex flex-col justify-center items-start md:gap-8 gap-6 z-10 w-full h-full rounded-xl"
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <FormField
@@ -79,7 +82,7 @@ const LoginForm = () => {
                   <Input
                     type="email"
                     placeholder="Emailmu di sini"
-                    className="md:w-[300px] md:h-[50px] w-[100px] h-[40px]"
+                    className="md:w-[400px] md:h-[50px] w-[400px] h-[40px]"
                     {...field}
                   />
                 </FormControl>
@@ -99,7 +102,7 @@ const LoginForm = () => {
                   <Input
                     type="password"
                     placeholder="Your password..."
-                    className="md:w-[300px] md:h-[50px] w-[100px] h-[40px]"
+                    className="md:w-[400px] md:h-[50px] w-[400px] h-[40px]"
                     {...field}
                   />
                 </FormControl>
@@ -107,25 +110,25 @@ const LoginForm = () => {
               </FormItem>
             )}
           />
+          <Button
+            type="submit"
+            className="bg-purple-500 font-bold md:w-[400px] w-[270px] hover:bg-secondary"
+          >
+            Masuk
+          </Button>
           <div className="flex flex-col text-white lg:text-xl md:text-md text-xs font-bold">
             <p>
               Belum punya akun?{" "}
               <span>
                 <Link
-                  className="text-secondary-foreground cursor-pointer hover:text-[#e2a200]"
+                  className="text-secondary-foreground cursor-pointer hover:text-secondary"
                   href="/register"
                 >
-                  Daftar disini
+                  Daftar di sini
                 </Link>{" "}
               </span>
             </p>
           </div>
-          <Button
-            type="submit"
-            className="bg-secondary-foreground font-bold md:w-[300px] w-[270px] hover:bg-[#e2a200]"
-          >
-            Masuk
-          </Button>
         </form>
       </div>
     </Form>

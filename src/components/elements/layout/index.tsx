@@ -1,17 +1,20 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import { DataProvider } from "@/components/contexts/context";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main>
-      <Navbar />
+    <Suspense>
       <Toaster position="top-center" />
-      <main className="w-full min-h-screen pt-[80px] bg-[#fafafa] dark:bg-[#00090A]">
-        {children}
-      </main>
-      <Footer />
-    </main>
+      <DataProvider>
+        <Navbar />
+        <main className="w-full min-h-screen pt-[80px] bg-[#fafafa] dark:bg-[#00090A]">
+          {children}
+        </main>
+        <Footer />
+      </DataProvider>
+    </Suspense>
   );
 };

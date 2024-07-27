@@ -44,7 +44,7 @@ const LoginForm = () => {
         toast.success("Login Berhasil", {
           description: `Selamat datang ${user.displayName}`,
         });
-        router.push("/dashboard");
+        router.push("/");
       })
       .catch((error) => {
         const errorCode = error.code;

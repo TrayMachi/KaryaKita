@@ -5,8 +5,8 @@ export const items = [
       location: 'Jakarta Utara',
       rating: 5,
       sold: 1000,
-      image: '/jual1.png'
-
+      image: '/jual1.png',
+      sponsor: true
     },
     {
       title: 'Comission Lukisan Realistis',
@@ -14,7 +14,8 @@ export const items = [
       location: 'Jakarta Pusat',
       rating: 5,
       sold: 200,
-      image: '/jual2.png'
+      image: '/jual2.png',
+      sponsor: true
     },
     {
       title: 'Kerajinan Tangan',
@@ -22,7 +23,8 @@ export const items = [
       location: 'Jakarta Barat',
       rating: 4,
       sold: 500,
-      image: '/jual3.png'
+      image: '/jual3.png',
+      sponsor: true
     },
     {
       title: 'Kerajinan Tangan',
@@ -30,7 +32,8 @@ export const items = [
       location: 'Jakarta Barat',
       rating: 4,
       sold: 500,
-      image: '/jual4.png'
+      image: '/jual4.png',
+      sponsor: true
     },
     {
       title: 'Kerajinan Tangan',
@@ -38,7 +41,8 @@ export const items = [
       location: 'Jakarta Barat',
       rating: 4,
       sold: 500,
-      image: '/jual5.png'
+      image: '/jual5.png',
+      sponsor: false
     },
     {
       title: 'Kerajinan Tangan',
@@ -46,7 +50,8 @@ export const items = [
       location: 'Jakarta Barat',
       rating: 4,
       sold: 500,
-      image: '/jual1.png'
+      image: '/jual1.png',
+      sponsor: false
     },
     {
       title: 'Kerajinan Tangan',
@@ -54,7 +59,8 @@ export const items = [
       location: 'Jakarta Barat',
       rating: 4,
       sold: 500,
-      image: '/jual2.png'
+      image: '/jual2.png',
+      sponsor: false
     },
     {
       title: 'Kerajinan Tangan',
@@ -62,7 +68,8 @@ export const items = [
       location: 'Jakarta Barat',
       rating: 4,
       sold: 500,
-      image: '/jual3.png'
+      image: '/jual3.png',
+      sponsor: false
     },
     {
       title: 'Kerajinan Tangan',
@@ -70,7 +77,8 @@ export const items = [
       location: 'Jakarta Barat',
       rating: 4,
       sold: 500,
-      image: '/jual4.png'
+      image: '/jual4.png',
+      sponsor: false
     },
   ];
   

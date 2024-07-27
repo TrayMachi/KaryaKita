@@ -63,6 +63,7 @@ export const RegisterForm: React.FC = () => {
                 noTelp: data.noTelp,
                 isPenjual: false,
                 tanggalLahir: newDate,
+                koin: 0,
               });
               toast.success("Akun berhasil dibuat!");
               router.push("/login");

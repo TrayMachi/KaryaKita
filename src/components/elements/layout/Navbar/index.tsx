@@ -17,7 +17,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { LogOut, Settings, Tag } from "lucide-react";
+import { LogOut, Settings, Tag, Plus } from "lucide-react";
 
 export const Navbar = () => {
   const [user, setUser] = useAuth();
@@ -91,7 +91,9 @@ export const Navbar = () => {
         <div className="flex flex-row gap-[72px] items-center">
           <TransitionLink
             href="/"
-            className={`text-[16px] font-poppins font-semibold ${pathname === "/" ? "text-[#45349F]" : "text-[#CCCBCB]"}`}
+            className={`text-[16px] font-poppins font-semibold ${
+              pathname === "/" ? "text-[#45349F]" : "text-[#CCCBCB]"
+            }`}
           >
             Beranda
           </TransitionLink>
@@ -105,13 +107,17 @@ export const Navbar = () => {
         <div className="flex flex-row gap-[72px] items-center">
           <TransitionLink
             href="/"
-            className={`text-[16px] font-poppins font-semibold ${pathname === "/" ? "text-[#45349F]" : "text-[#CCCBCB]"}`}
+            className={`text-[16px] font-poppins font-semibold ${
+              pathname === "/" ? "text-[#45349F]" : "text-[#CCCBCB]"
+            }`}
           >
             Beranda
           </TransitionLink>
           <TransitionLink
             href="/cart"
-            className={`text-[16px] font-poppins font-semibold ${pathname === "/cart" ? "text-[#45349F]" : "text-[#CCCBCB]"}`}
+            className={`text-[16px] font-poppins font-semibold ${
+              pathname === "/cart" ? "text-[#45349F]" : "text-[#CCCBCB]"
+            }`}
           >
             Keranjang
           </TransitionLink>
@@ -126,16 +132,39 @@ export const Navbar = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="flex flex-col items-start justify-center gap-3 p-4 w-[232px]">
+                    <div className="text-[18px] flex gap-2 items-center font-poppins font-medium text-primary">
+                      <Image
+                        src="/KaKiKoin.png"
+                        alt="koin"
+                        width={24}
+                        height={24}
+                      />
+                      {data?.koin}
+                      <TransitionLink
+                        href="/topup"
+                      >
+                        <Plus />
+                      </TransitionLink>
+                    </div>
+                    <div className="bg-[#B5B3B3] flex flex-col h-[1px] w-[200px]" />
                     <TransitionLink
                       href="/profile"
-                      className={`text-[18px] flex gap-2 font-poppins font-medium ${pathname === "/profile" ? "text-[#45349F]" : "text-[#CCCBCB]"}`}
+                      className={`text-[18px] flex gap-2 font-poppins font-medium ${
+                        pathname === "/profile"
+                          ? "text-[#45349F]"
+                          : "text-[#CCCBCB]"
+                      }`}
                     >
                       <Settings />
                       Profil
                     </TransitionLink>
                     <TransitionLink
                       href="/register/toko"
-                      className={`text-[18px] flex gap-2 font-poppins font-medium ${pathname === "/register/toko" ? "text-[#45349F]" : "text-[#CCCBCB]"}`}
+                      className={`text-[18px] flex gap-2 font-poppins font-medium ${
+                        pathname === "/register/toko"
+                          ? "text-[#45349F]"
+                          : "text-[#CCCBCB]"
+                      }`}
                     >
                       <Tag />
                       Jadi penjual

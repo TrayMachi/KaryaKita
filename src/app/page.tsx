@@ -1,9 +1,9 @@
-import RegisterModule from "@/modules/RegisterModule";
+import { LandingPageModule } from "@/modules/LandingPageModule";
 
 export default function Home() {
   return (
     <main>
-      <RegisterModule />
+      <LandingPageModule />
     </main>
   );
 }

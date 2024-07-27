@@ -1,9 +1,10 @@
-import { LandingPageModule } from "@/modules/LandingPageModule";
+import ItemDetailModule from "@/modules/ItemDetailModule";
+
 
 export default function Home() {
   return (
     <main>
-      <LandingPageModule />
+      <ItemDetailModule />
     </main>
   );
 }

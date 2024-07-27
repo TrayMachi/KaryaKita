@@ -79,7 +79,7 @@ const LoginForm = () => {
                   <Input
                     type="email"
                     placeholder="Emailmu di sini"
-                    className="md:w-[600px] md:h-[50px] w-[270px] h-[40px]"
+                    className="md:w-[300px] md:h-[50px] w-[100px] h-[40px]"
                     {...field}
                   />
                 </FormControl>
@@ -99,7 +99,7 @@ const LoginForm = () => {
                   <Input
                     type="password"
                     placeholder="Your password..."
-                    className="md:w-[600px] md:h-[50px] w-[270px] h-[40px]"
+                    className="md:w-[300px] md:h-[50px] w-[100px] h-[40px]"
                     {...field}
                   />
                 </FormControl>
@@ -122,7 +122,7 @@ const LoginForm = () => {
           </div>
           <Button
             type="submit"
-            className="bg-secondary-foreground font-bold md:w-[600px] w-[270px] hover:bg-[#e2a200]"
+            className="bg-secondary-foreground font-bold md:w-[300px] w-[270px] hover:bg-[#e2a200]"
           >
             Masuk
           </Button>

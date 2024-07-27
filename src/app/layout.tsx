@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
 import { Poppins, Lato } from "next/font/google";
 import "./globals.css";
+import { Layout } from "@/components/elements/layout";
 
 const poppins = Poppins({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins',
-  weight: "600"
-})
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  weight: "600",
+});
 
 const lato = Lato({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-lato',
-  weight: "400"
-})
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-lato",
+  weight: "400",
+});
 
 export const metadata: Metadata = {
   title: "KaryaKita",
@@ -28,7 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${lato.variable}`}>{children}</body>
+      <body className={`${poppins.variable} ${lato.variable}`}>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, createContext, useContext } from "react";
 import { User } from "firebase/auth";
-import { userDataInterface } from "../elements/interface";
 import { DocumentData } from "firebase/firestore";
 
 const AuthConttext = createContext<

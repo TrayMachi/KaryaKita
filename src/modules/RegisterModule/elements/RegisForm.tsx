@@ -38,9 +38,6 @@ import { TransitionLink } from "@/components/utils/TransitionLink";
 type FormValues = z.infer<typeof FormSchema>;
 
 export const RegisterForm: React.FC = () => {
-  const [uploadedImage, setUploadedImage] = useState<File | null>(null);
-
-
   const router = useRouter();
 
   const form = useForm<FormValues>({
@@ -55,6 +52,7 @@ export const RegisterForm: React.FC = () => {
         if (user) {
           updateProfile(user, {
             displayName: data.username,
+            photoURL: 'https://firebasestorage.googleapis.com/v0/b/karyakita-261a3.appspot.com/o/PHOTOS%2FUserFallback.png?alt=media&token=f943760c-5f48-4084-89f0-61016d3c5d23',
           })
             .then(async () => {
               const docRef = doc(db, "user", user.uid);
@@ -70,7 +68,7 @@ export const RegisterForm: React.FC = () => {
               router.push("/login");
             })
             .catch((error) => {
-              toast.error("Gagal membuat akun!");
+              toast.error("Gagal membuat akun! \n error: " + error);
             });
         }
       })
@@ -82,7 +80,7 @@ export const RegisterForm: React.FC = () => {
 
   return (
     <Form {...form}>
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center min-h-screen">
         <h2 className="font-poppins mt-5 text-[40px] text-primary-foreground font-extrabold mb-10">
           Buat Akun
         </h2>
@@ -90,13 +88,13 @@ export const RegisterForm: React.FC = () => {
           className="flex flex-col justify-center items-center md:gap-8 gap-6 z-10 w-full h-full p-8 pt-3 rounded-xl"
           onSubmit={form.handleSubmit(onSubmit)}
         >
-          <div>
+          <div className="flex flex-col gap-4">
             <FormField
               control={form.control}
               name="username"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="lg:text-xl md:text-md text-xs font-bold text-secondary-foreground">
+                  <FormLabel className="text-[16px] text-secondary-foreground">
                     Nama Lengkap
                   </FormLabel>
                   <FormControl>
@@ -111,38 +109,48 @@ export const RegisterForm: React.FC = () => {
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="tanggalLahir"
               render={({ field }) => (
                 <FormItem className="flex flex-col">
-                  <FormLabel className="text-xl mt-2 font-bold text-primary-foreground font-poppins">Tanggal Lahir</FormLabel>
+                  <FormLabel className="text-[16px] mt-2 text-primary-foreground font-poppins">
+                    Tanggal Lahir
+                  </FormLabel>
                   <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
                         <Button
-                          variant={"ghost"}
+                          variant="tertiary"
                           className={cn(
-                            "w-[600px] pl-3 text-left font-normal",
+                            "xl:w-[600px] lg:w-[350px] w-[270px] md:h-[50px] h-[40px] pl-3 text-left font-normal flex flex-row items-center justify-between",
                             !field.value && "text-muted-foreground"
                           )}
                         >
-                          {field.value ? (
-                            format(field.value, "PPP")
+                          {field?.value ? (
+                            <span className="text-muted-foreground">
+                              {format(field?.value, "PPP")}
+                            </span>
                           ) : (
-                            <span>dd/mm/yyyy</span>
+                            <span>Pilih tanggal</span>
                           )}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                          <CalendarIcon className="h-4 w-4 opacity-50" />
                         </Button>
                       </FormControl>
                     </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
+                    <PopoverContent
+                      align={"start"}
+                      className="bg-transparent border-0"
+                    >
                       <Calendar
+                        captionLayout="dropdown-buttons"
                         mode="single"
+                        fromYear={1990}
+                        toYear={2024}
                         selected={field.value}
                         onSelect={field.onChange}
-                        disabled={(date: Date) =>
-                          date > new Date() || date < new Date("1900-01-01")
+                        disabled={(date) =>
+                          date >= new Date() || date < new Date("1900-01-01")
                         }
                         initialFocus
                       />
@@ -157,7 +165,7 @@ export const RegisterForm: React.FC = () => {
               name="noTelp"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="lg:text-xl md:text-md text-xs font-bold text-secondary-foreground">
+                  <FormLabel className="text-[16px] text-secondary-foreground">
                     No. Telepon
                   </FormLabel>
                   <FormControl>
@@ -177,14 +185,14 @@ export const RegisterForm: React.FC = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="lg:text-xl md:text-md text-xs font-bold text-secondary-foreground">
+                  <FormLabel className="text-[16px] text-secondary-foreground">
                     Email
                   </FormLabel>
                   <FormControl>
                     <Input
                       type="email"
                       placeholder="Masukkan email"
-                      className="xl:w-[600px] lg:w-[350px] md:h-[50px] w-[270px] h-[40px]"
+                      className="xl:w-[600px] lg:w-[350px] w-[270px] md:h-[50px]  h-[40px]"
                       {...field}
                     />
                   </FormControl>
@@ -197,7 +205,7 @@ export const RegisterForm: React.FC = () => {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="lg:text-xl md:text-md text-xs font-bold text-secondary-foreground">
+                  <FormLabel className="text-[16px] text-secondary-foreground">
                     Password
                   </FormLabel>
                   <FormControl>
@@ -209,46 +217,47 @@ export const RegisterForm: React.FC = () => {
                     />
                   </FormControl>
                   <FormMessage />
-                    <ul className="text-primary-foreground list-disc px-4">
-                      <li>Password berisikan minimal 8 karakter </li>
-                      <li>Password wajib memiliki huruf kapital dan angka</li>
-                    </ul>
+                  <ul className="text-primary-foreground list-disc px-4">
+                    <li>Password berisikan minimal 8 karakter </li>
+                    <li>Password wajib memiliki huruf kapital dan angka</li>
+                  </ul>
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="confirmPassoword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-[16px] text-secondary-foreground">
+                    Ulangi Password
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      type="password"
+                      placeholder="Masukkan ulang password"
+                      className="xl:w-[600px] lg:w-[350px] md:h-[50px] w-[270px] h-[40px]"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
           </div>
-          <FormField
-            control={form.control}
-            name="confirmPassoword"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="lg:text-xl md:text-md text-xs font-bold text-secondary-foreground">
-                  Ulangi Password
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    type="password"
-                    placeholder="Masukkan ulang password"
-                    className="xl:w-[600px] lg:w-[350px] md:h-[50px] w-[270px] h-[40px]"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
           <Button
             type="submit"
-            className="bg-primary font-bold xl:w-[600px] lg:w-[350px] w-[270px] hover:bg-secondary"
+            className="font-bold xl:w-[600px] lg:w-[350px] w-[270px]"
           >
             Daftar
           </Button>
-          <div className="flex flex-col text-white lg:text-xl md:text-md text-xs font-bold">
+          <div className="flex flex-col text-primary-foreground text-[16px] font-normal">
             <p>
               Sudah punya akun?{" "}
               <span>
                 <TransitionLink
-                  className="text-secondary-foreground cursor-pointer hover:text-secondary"
+                  className="text-secondary cursor-pointer underline"
                   href="/login"
                 >
                   Login disini

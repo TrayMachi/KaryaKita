@@ -12,7 +12,9 @@ export const FormSchema = z
       .string({
         required_error: "Tolong masukan password anda.",
       })
-      .min(8, "Password minimal 8 karakter."),
+      .min(8, "Password minimal 8 karakter.")
+      .regex(/[A-Z]/, "Password harus mengandung setidaknya satu huruf besar.")
+      .regex(/[0-9]/, "Password harus mengandung setidaknya satu angka."),
     tanggalLahir: z.date({
       required_error: "Tolong masukan tanggal lahir anda.",
     }),

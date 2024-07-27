@@ -76,7 +76,24 @@ body {
 
 .page-transition {
   opacity: 0;
-  background: #E5E2F6;
+  background: #e5e2f6;
   transform: translate(40px);
   filter: blur(20px);
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-corner {
+  background: #fafafa;
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: content-box currentColor;
+  border: 2px solid transparent;
+  color: #5038bc;
 }

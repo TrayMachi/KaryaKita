@@ -18,9 +18,14 @@ export const Navbar = () => {
         </div>
       </TransitionLink>
       <div className="flex flex-row gap-[72px] items-center">
-        <TransitionLink href="/" className="text-[16px] font-poppins font-semibold text-[#45349F]">Beranda</TransitionLink>
+        <TransitionLink
+          href="/"
+          className="text-[16px] font-poppins font-semibold text-[#45349F]"
+        >
+          Beranda
+        </TransitionLink>
         <TransitionLink href="/login">
-          <Button>Masuk</Button>
+          <Button className="w-[118px] text-[16px] font-poppins">Masuk</Button>
         </TransitionLink>
       </div>
     </nav>

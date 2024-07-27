@@ -7,7 +7,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-poppins",
-  weight: "600",
+  weight: "500",
 });
 
 const lato = Lato({

@@ -23,18 +23,26 @@ const config = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        foreground: "#fafafa",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#5038BC",
+          foreground: "#fafafa",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#FCCB83",
+          foreground: "#fafafa",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "#E4626F",
+          foreground: "#fafafa",
+        },
+        success: {
+          DEFAULT: "#A4F4E7",
+          foreground: "#fafafa",
+        },
+        warning: {
+          DEFAULT: "#F4C790",
+          foreground: "#fafafa",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",

@@ -1,8 +1,9 @@
-
+import RegisterModule from "@/modules/RegisterModule";
 
 export default function Home() {
   return (
-    <main className="flex justify-center items-center mt-[25vw]">
+    <main>
+      <RegisterModule />
     </main>
   );
 }

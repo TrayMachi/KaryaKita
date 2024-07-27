@@ -13,6 +13,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
+  FormDescription,
 } from "@/components/ui/form";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -32,13 +33,13 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
+import { TransitionLink } from "@/components/utils/TransitionLink";
 
 type FormValues = z.infer<typeof FormSchema>;
 
 export const RegisterForm: React.FC = () => {
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
-  const [ktm, setKtm] = useState<File | null>(null);
-  const [jurusan, setJurusan] = useState<string[]>([] as string[]);
+
 
   const router = useRouter();
 
@@ -81,15 +82,15 @@ export const RegisterForm: React.FC = () => {
 
   return (
     <Form {...form}>
-      <div className="flex flex-col justify-center items-center mb-20">
-        <h2 className="text-[50px] text-secondary-foreground font-extrabold drop-shadow-glow mb-10">
-          Daftar Akun
+      <div className="flex flex-col justify-center items-center">
+        <h2 className="font-poppins mt-5 text-[40px] text-primary-foreground font-extrabold mb-10">
+          Buat Akun
         </h2>
         <form
-          className="flex flex-col justify-center items-center md:gap-8 gap-6 z-10 w-full h-full bg-primary-foreground p-8 pt-16 rounded-xl"
+          className="flex flex-col justify-center items-center md:gap-8 gap-6 z-10 w-full h-full p-8 pt-3 rounded-xl"
           onSubmit={form.handleSubmit(onSubmit)}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 justify-start items-center xl:gap-8 md:gap-4 gap-2">
+          <div>
             <FormField
               control={form.control}
               name="username"
@@ -101,7 +102,7 @@ export const RegisterForm: React.FC = () => {
                   <FormControl>
                     <Input
                       type="text"
-                      placeholder="Your Full Name"
+                      placeholder="Masukkan nama lengkap"
                       className="xl:w-[600px] lg:w-[350px] md:h-[50px] w-[270px] h-[40px]"
                       {...field}
                     />
@@ -110,86 +111,26 @@ export const RegisterForm: React.FC = () => {
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="lg:text-xl md:text-md text-xs font-bold text-secondary-foreground">
-                    Email
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      placeholder="Emailmu di sini"
-                      className="xl:w-[600px] lg:w-[350px] md:h-[50px] w-[270px] h-[40px]"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="password"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="lg:text-xl md:text-md text-xs font-bold text-secondary-foreground">
-                    Password
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      type="password"
-                      placeholder="Your password..."
-                      className="xl:w-[600px] lg:w-[350px] md:h-[50px] w-[270px] h-[40px]"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="noTelp"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="lg:text-xl md:text-md text-xs font-bold text-secondary-foreground">
-                    No. Telepon
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      type="text"
-                      placeholder="No Telepon"
-                      className="xl:w-[600px] lg:w-[350px] md:h-[50px] w-[270px] h-[40px]"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
+             <FormField
               control={form.control}
               name="tanggalLahir"
               render={({ field }) => (
                 <FormItem className="flex flex-col">
-                  <FormLabel>Tanggal Lahir</FormLabel>
+                  <FormLabel className="text-xl mt-2 font-bold text-primary-foreground font-poppins">Tanggal Lahir</FormLabel>
                   <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
                         <Button
                           variant={"ghost"}
                           className={cn(
-                            "w-[240px] pl-3 text-left font-normal",
+                            "w-[600px] pl-3 text-left font-normal",
                             !field.value && "text-muted-foreground"
                           )}
                         >
                           {field.value ? (
                             format(field.value, "PPP")
                           ) : (
-                            <span>Pick a date</span>
+                            <span>dd/mm/yyyy</span>
                           )}
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
@@ -211,6 +152,70 @@ export const RegisterForm: React.FC = () => {
                 </FormItem>
               )}
             />
+            <FormField
+              control={form.control}
+              name="noTelp"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="lg:text-xl md:text-md text-xs font-bold text-secondary-foreground">
+                    No. Telepon
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      type="text"
+                      placeholder="Masukkan nomor telepon"
+                      className="xl:w-[600px] lg:w-[350px] md:h-[50px] w-[270px] h-[40px]"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="lg:text-xl md:text-md text-xs font-bold text-secondary-foreground">
+                    Email
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="Masukkan email"
+                      className="xl:w-[600px] lg:w-[350px] md:h-[50px] w-[270px] h-[40px]"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="lg:text-xl md:text-md text-xs font-bold text-secondary-foreground">
+                    Password
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      type="password"
+                      placeholder="Masukkan password"
+                      className="xl:w-[600px] lg:w-[350px] md:h-[50px] w-[270px] h-[40px]"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                    <ul className="text-primary-foreground list-disc px-4">
+                      <li>Password berisikan minimal 8 karakter </li>
+                      <li>Password wajib memiliki huruf kapital dan angka</li>
+                    </ul>
+                </FormItem>
+              )}
+            />
           </div>
           <FormField
             control={form.control}
@@ -218,12 +223,12 @@ export const RegisterForm: React.FC = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="lg:text-xl md:text-md text-xs font-bold text-secondary-foreground">
-                  Verifikasi Password
+                  Ulangi Password
                 </FormLabel>
                 <FormControl>
                   <Input
                     type="password"
-                    placeholder="Your password..."
+                    placeholder="Masukkan ulang password"
                     className="xl:w-[600px] lg:w-[350px] md:h-[50px] w-[270px] h-[40px]"
                     {...field}
                   />
@@ -232,25 +237,25 @@ export const RegisterForm: React.FC = () => {
               </FormItem>
             )}
           />
+          <Button
+            type="submit"
+            className="bg-primary font-bold xl:w-[600px] lg:w-[350px] w-[270px] hover:bg-secondary"
+          >
+            Daftar
+          </Button>
           <div className="flex flex-col text-white lg:text-xl md:text-md text-xs font-bold">
             <p>
               Sudah punya akun?{" "}
               <span>
-                <Link
-                  className="text-secondary-foreground cursor-pointer hover:text-[#e2a200]"
+                <TransitionLink
+                  className="text-secondary-foreground cursor-pointer hover:text-secondary"
                   href="/login"
                 >
                   Login disini
-                </Link>{" "}
+                </TransitionLink>{" "}
               </span>
             </p>
           </div>
-          <Button
-            type="submit"
-            className="bg-secondary-foreground font-bold xl:w-[600px] lg:w-[350px] w-[270px] hover:bg-[#e2a200]"
-          >
-            Daftar
-          </Button>
         </form>
       </div>
     </Form>

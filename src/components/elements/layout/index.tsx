@@ -10,7 +10,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <Toaster position="top-center" />
       <DataProvider>
         <Navbar />
-        <main className="w-full min-h-screen bg-[#fafafa] dark:bg-[#00090A]">
+        <main className="w-full min-h-screen font-poppins bg-[#fafafa] dark:bg-[#00090A]">
           {children}
         </main>
         <Footer />

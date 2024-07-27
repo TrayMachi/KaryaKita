@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { z } from "zod";
 import { auth } from "@/lib/firebase";
@@ -17,7 +17,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { TransitionLink } from "@/components/utils/TransitionLink";
 import { Input } from "@/components/ui/input";
 
 const FormSchema = z.object({
@@ -60,14 +60,17 @@ const LoginForm = () => {
   return (
     <Form {...form}>
       <div className="flex flex-col justify-center items-center">
-        <div className="w-[450px]">
-          <h2 className="text-[40px] font-poppins text-white font-extrabold drop-shadow-glow">
+        <div className="w-[400px] text-balance items-start gap-6 flex flex-col">
+          <h2 className="text-[40px] leading-[48px] font-poppins text-white font-extrabold">
             Masuk ke akun
           </h2>
-          <p className="text-[16px] text-white pt-2 pb-14 font-poppins">Masukkan kredensial yang valid untuk mengakses seluruh fitur KaryaKita</p>
+          <p className="text-[16px] text-white pb-[32px] font-poppins">
+            Masukkan kredensial yang valid untuk mengakses seluruh fitur
+            KaryaKita
+          </p>
         </div>
         <form
-          className="flex flex-col justify-center items-start md:gap-8 gap-6 z-10 w-full h-full rounded-xl"
+          className="flex flex-col justify-center items-center md:gap-8 gap-6 z-10 w-full h-full rounded-xl"
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <FormField
@@ -110,22 +113,19 @@ const LoginForm = () => {
               </FormItem>
             )}
           />
-          <Button
-            type="submit"
-            className="bg-purple-500 font-bold md:w-[400px] w-[270px] hover:bg-secondary"
-          >
+          <Button type="submit" className="font-bold md:w-[400px] w-[270px] ">
             Masuk
           </Button>
-          <div className="flex flex-col text-white lg:text-xl md:text-md text-xs font-bold">
+          <div className="flex flex-col justify-center items-center text-primary-foreground text-[16px] font-normal">
             <p>
-              Belum punya akun?{" "}
+              Tidak Memiliki Akun?{" "}
               <span>
-                <Link
-                  className="text-secondary-foreground cursor-pointer hover:text-secondary"
+                <TransitionLink
+                  className="text-secondary cursor-pointer underline"
                   href="/register"
                 >
-                  Daftar di sini
-                </Link>{" "}
+                  Buat Akun
+                </TransitionLink>{" "}
               </span>
             </p>
           </div>

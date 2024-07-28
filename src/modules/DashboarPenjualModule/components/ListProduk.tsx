@@ -10,7 +10,7 @@ export const ListProduk: React.FC<ListProdukProps> = ({ title, products }) => {
         {products.map((product, index) => (
           <Card key={index} className='w-fit p-3'>
             <CardTitle className='mb-2 font-extrabold text-md'>{product.title}</CardTitle>
-            <div className='flex flex-row justify-between items-center gap-4'>
+            <div className='flex flex-row justify-evenly items-center gap-4'>
               <CardDescription>{product.description}</CardDescription>
               <CardDescription>{product.price}</CardDescription>
             </div>

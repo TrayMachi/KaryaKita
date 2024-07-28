@@ -70,7 +70,7 @@ export function SalesTracking() {
           />
           <ChartTooltip content={<ChartTooltipContent />} />
           <ChartLegend content={<ChartLegendContent />} />
-          <Bar dataKey="count" fill="bg-primary" radius={4} />
+          <Bar dataKey="count" fill="#5038BC" radius={4} />
         </BarChart>
       </ChartContainer>
     </div>

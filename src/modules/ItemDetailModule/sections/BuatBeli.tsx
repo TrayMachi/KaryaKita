@@ -8,11 +8,11 @@ export const BuatBeli = () => {
         <p className='text-primary font-extrabold text-[24px] mb-2'>Beli</p>
         <div className='flex justify-between items-center mb-2'>
           <p className='text-[14px] text-primary font-bold'>1x<span className='ml-1'>30x40cm</span></p>
-          <p className='font-bold text-[13px] text-primary'>Rp.200.000</p>
+          <p className='font-bold text-[13px] text-primary'>Rp200.000</p>
         </div>
         <div className='flex justify-between items-center'>
           <p className='text-[14px] text-primary font-bold'>Subtotal</p>
-          <p className='font-bold text-[13px] text-primary'>Rp.200.000</p>
+          <p className='font-bold text-[13px] text-primary'>Rp200.000</p>
         </div>
       </div>
       <div className='flex flex-col gap-2 mt-5'> 

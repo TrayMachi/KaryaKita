@@ -5,7 +5,7 @@ import { MdOutlineMail } from "react-icons/md";
 
 export const Footer = () => {
   return (
-    <div className='w-screen mt-5 px-10 h-[120px] text-white border-t-2'>
+    <div className='mt-5 px-10 h-[120px] text-white border-t-2'>
       <div className='flex justify-between items-center h-full'>
         <Image src='/KaryaKitaLogo.png' alt='KaryaKita Logo' width={100} height={100} />
         <div className='flex space-x-4'>

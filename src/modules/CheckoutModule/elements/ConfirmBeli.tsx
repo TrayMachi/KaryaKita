@@ -25,7 +25,7 @@ export const ConfirmBeli = () => {
       </div>
       <div className='flex flex-col gap-2 mt-5'> 
         <Button>Beli Langsung</Button>
-        <Button>Masukkan Keranjang</Button>
+        <Button variant={"ghost"}>Masukkan Keranjang</Button>
       </div>
     </div>
   );

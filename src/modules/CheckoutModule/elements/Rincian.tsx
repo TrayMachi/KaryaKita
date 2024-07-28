@@ -1,5 +1,5 @@
 import React from 'react'
-import { SquareArrowLeft } from 'lucide-react';
+import Image from 'next/image';
 
 
 export const Rincian: React.FC = () => {
@@ -36,7 +36,7 @@ export const Rincian: React.FC = () => {
         <div className="mb-4">
           <h3 className="text-lg font-semibold text-purple-600">Saldo KaKiKoin</h3>
           <div className="flex items-center mt-2">
-            <img src="/KakiKoin.png" alt="KaKiKoin" className="w-6 h-6" />
+            <Image src="/KakiKoin.png" alt="KaKiKoin" width={6} height={6} className="w-6 h-6" />
             <p className="ml-2 text-xl font-bold">300</p>
           </div>
           <button className="mt-4 px-4 py-2 bg-white border border-purple-600 text-purple-600 rounded">Isi Saldo</button>

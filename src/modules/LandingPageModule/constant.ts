@@ -1,5 +1,6 @@
 export const items = [
     {
+      id: 1,
       title: 'Miniatur Handmade',
       priceRange: 'Rp50k-200k',
       location: 'Jakarta Utara',
@@ -9,6 +10,7 @@ export const items = [
       sponsor: true
     },
     {
+      id: 2,
       title: 'Comission Lukisan Realistis',
       priceRange: 'Rp150k-500k',
       location: 'Jakarta Pusat',
@@ -18,6 +20,7 @@ export const items = [
       sponsor: true
     },
     {
+      id: 3,
       title: 'Kerajinan Tangan',
       priceRange: 'Rp20k-100k',
       location: 'Jakarta Barat',
@@ -27,6 +30,7 @@ export const items = [
       sponsor: true
     },
     {
+      id: 4,
       title: 'Kerajinan Tangan',
       priceRange: 'Rp20k-100k',
       location: 'Jakarta Barat',
@@ -36,6 +40,7 @@ export const items = [
       sponsor: true
     },
     {
+      id: 5,
       title: 'Kerajinan Tangan',
       priceRange: 'Rp20k-100k',
       location: 'Jakarta Barat',
@@ -45,6 +50,7 @@ export const items = [
       sponsor: false
     },
     {
+      id: 6,
       title: 'Kerajinan Tangan',
       priceRange: 'Rp20k-100k',
       location: 'Jakarta Barat',
@@ -54,6 +60,7 @@ export const items = [
       sponsor: false
     },
     {
+      id: 7,
       title: 'Kerajinan Tangan',
       priceRange: 'Rp20k-100k',
       location: 'Jakarta Barat',
@@ -63,6 +70,7 @@ export const items = [
       sponsor: false
     },
     {
+      id: 8,
       title: 'Kerajinan Tangan',
       priceRange: 'Rp20k-100k',
       location: 'Jakarta Barat',
@@ -72,6 +80,7 @@ export const items = [
       sponsor: false
     },
     {
+      id: 9,
       title: 'Kerajinan Tangan',
       priceRange: 'Rp20k-100k',
       location: 'Jakarta Barat',

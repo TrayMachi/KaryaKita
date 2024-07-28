@@ -7,7 +7,8 @@ export const items = [
       rating: 5,
       sold: 1000,
       image: '/jual1.png',
-      sponsor: true
+      sponsor: true,
+      description: "Saya udah cape 24 jam ngoding T___T"
     },
     {
       id: 2,
@@ -17,7 +18,8 @@ export const items = [
       rating: 5,
       sold: 200,
       image: '/jual2.png',
-      sponsor: true
+      sponsor: true,
+      description: "lorem ipsum dolor sit amet. capek banget T___T wah udah capek banget",
     },
     {
       id: 3,
@@ -27,7 +29,8 @@ export const items = [
       rating: 4,
       sold: 500,
       image: '/jual3.png',
-      sponsor: true
+      sponsor: true,
+      description: "lorem ipsum dolor sit amet. hai aku capek banget T___T",
     },
     {
       id: 4,
@@ -37,7 +40,8 @@ export const items = [
       rating: 4,
       sold: 500,
       image: '/jual4.png',
-      sponsor: true
+      sponsor: true,
+      description: "lorem ipsum dolor sit amet. halo aku capek banget T___T",
     },
     {
       id: 5,
@@ -47,7 +51,8 @@ export const items = [
       rating: 4,
       sold: 500,
       image: '/jual5.png',
-      sponsor: false
+      sponsor: false,
+      description: "lorem ipsum dolor sit amet. test capek banget T___T",
     },
     {
       id: 6,
@@ -57,7 +62,8 @@ export const items = [
       rating: 4,
       sold: 500,
       image: '/jual1.png',
-      sponsor: false
+      sponsor: false,
+      description: "lorem ipsum dolor sit amet. test capek banget T___T",
     },
     {
       id: 7,
@@ -67,7 +73,8 @@ export const items = [
       rating: 4,
       sold: 500,
       image: '/jual2.png',
-      sponsor: false
+      sponsor: false,
+      description: "lorem ipsum dolor sit amet. gimana capek banget T___T",
     },
     {
       id: 8,
@@ -77,7 +84,8 @@ export const items = [
       rating: 4,
       sold: 500,
       image: '/jual3.png',
-      sponsor: false
+      sponsor: false,
+      description: "lorem ipsum dolor sit amet, capek banget T___T",
     },
     {
       id: 9,
@@ -87,7 +95,8 @@ export const items = [
       rating: 4,
       sold: 500,
       image: '/jual4.png',
-      sponsor: false
+      sponsor: false,
+      description: "lorem ipsum dolor sit amet, wdqw capek banget T___T",
     },
   ];
   

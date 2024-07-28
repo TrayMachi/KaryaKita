@@ -130,7 +130,7 @@ export const Navbar = () => {
                   </Avatar>
                   {user.displayName}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="">
                   <div className="flex flex-col items-start justify-center gap-3 p-4 w-[232px]">
                     <div className="text-[18px] flex gap-2 items-center font-poppins font-medium text-primary">
                       <Image

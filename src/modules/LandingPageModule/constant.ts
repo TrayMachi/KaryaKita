@@ -98,5 +98,16 @@ export const items = [
       sponsor: false,
       description: "lorem ipsum dolor sit amet, wdqw capek banget T___T",
     },
+    {
+      id: 10,
+      title: 'Miniatur Handmade',
+      priceRange: 'Rp50k-200k',
+      location: 'Jakarta Utara',
+      rating: 5,
+      sold: 1000,
+      image: '/jual1.png',
+      sponsor: true,
+      description: "Saya udah cape 24 jam ngoding T___T"
+    },
   ];
   

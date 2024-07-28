@@ -19,6 +19,7 @@ export const LandingPageModule = () => {
           if (item.sponsor) {
             return (
               <CardBarang
+                id="1"
                 key={index}
                 title={item.title}
                 priceRange={item.priceRange}
@@ -38,6 +39,7 @@ export const LandingPageModule = () => {
       <div className="grid xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[27px]">
         {items.map((item, index) => (
           <CardBarang
+            id="1"
             key={index}
             title={item.title}
             priceRange={item.priceRange}

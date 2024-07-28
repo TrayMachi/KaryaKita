@@ -1,4 +1,5 @@
 export interface ItemCardProps {
+    id: string;
     title: string;
     priceRange: string;
     location: string;

@@ -17,7 +17,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { LogOut, Settings, Tag, Plus } from "lucide-react";
+import { LogOut, Settings, Tag, Plus, Store, Brush } from "lucide-react";
 
 export const Navbar = () => {
   const [user, setUser] = useAuth();
@@ -140,9 +140,7 @@ export const Navbar = () => {
                         height={24}
                       />
                       {data?.koin}
-                      <TransitionLink
-                        href="/topup"
-                      >
+                      <TransitionLink href="/topup">
                         <Plus />
                       </TransitionLink>
                     </div>
@@ -158,17 +156,44 @@ export const Navbar = () => {
                       <Settings />
                       Profil
                     </TransitionLink>
-                    <TransitionLink
-                      href="/register/toko"
-                      className={`text-[18px] flex gap-2 font-poppins font-medium ${
-                        pathname === "/register/toko"
-                          ? "text-[#45349F]"
-                          : "text-[#CCCBCB]"
-                      }`}
-                    >
-                      <Tag />
-                      Jadi penjual
-                    </TransitionLink>
+                    {data?.isPenjual ? (
+                      <div className="flex flex-col items-start justify-center gap-3">
+                        <TransitionLink
+                          href="/dashboard"
+                          className={`text-[18px] flex gap-2 font-poppins font-medium ${
+                            pathname === "/dashboard"
+                              ? "text-[#45349F]"
+                              : "text-[#CCCBCB]"
+                          }`}
+                        >
+                          <Store />
+                          Menu Penjual
+                        </TransitionLink>
+                        <TransitionLink
+                          href="/dashboard/jual"
+                          className={`text-[18px] flex gap-2 font-poppins font-medium ${
+                            pathname === "/dashboard/jual"
+                              ? "text-[#45349F]"
+                              : "text-[#CCCBCB]"
+                          }`}
+                        >
+                          <Brush />
+                          Jual Karya
+                        </TransitionLink>
+                      </div>
+                    ) : (
+                      <TransitionLink
+                        href="/register/toko"
+                        className={`text-[18px] flex gap-2 font-poppins font-medium ${
+                          pathname === "/register/toko"
+                            ? "text-[#45349F]"
+                            : "text-[#CCCBCB]"
+                        }`}
+                      >
+                        <Tag />
+                        Jadi penjual
+                      </TransitionLink>
+                    )}
                     <div className="bg-[#B5B3B3] flex flex-col h-[1px] w-[200px]" />
                     <div
                       onClick={logOut}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { TransitionLink } from '@/components/utils/TransitionLink';
 
 export const BuatBeli = () => {
   return (
@@ -16,7 +17,7 @@ export const BuatBeli = () => {
         </div>
       </div>
       <div className='flex flex-col gap-2 mt-5'> 
-        <Button>Beli Langsung</Button>
+        <Button><TransitionLink href='/checkout'>Beli Sekarang</TransitionLink></Button>
         <Button>Masukkan Keranjang</Button>
       </div>
     </div>

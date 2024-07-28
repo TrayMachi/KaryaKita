@@ -53,6 +53,7 @@ export const BuatTokoForm = () => {
     }).then(() => {
       toast.success("Toko berhasil dibuat");
       router.push("/dashboard")
+      window.location.reload()
     })
   };
 

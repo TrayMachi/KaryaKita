@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { items } from "../constant";
 import { ItemCardProps } from "../interface";
 import Image from "next/image";
 import {
@@ -25,7 +24,7 @@ export const CardBarang: React.FC<ItemCardProps> = ({
 }) => {
   return (
     <TransitionLink href={`/item/${id}`}>
-      <Card className="border-2 border-primary text-primary shadow-lg">
+      <Card className="border-2 border-primary text-primary shadow-lg min-h-[500px]">
         <CardHeader>
           <Image src={image} alt={title} width={300} height={300} />
           {sponsor && <p>Disponsor</p>}

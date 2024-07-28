@@ -1,4 +1,4 @@
-import { DashboardPenjualModule } from "@/modules/DashboardPenjualModule";
+import DashboardPenjualModule from "@/modules/DashboarPenjualModule";
 import React from "react";
 import type { Metadata } from "next";
 

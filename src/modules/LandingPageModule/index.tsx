@@ -1,18 +1,15 @@
-
 import React from "react";
 import { SearchBar } from "./components/SearchBar";
 import { CardBarang } from "./components/CardBarang";
 import { items } from "./constant";
 import CarouselIklan from "./components/CarouselIklan";
-import { collection, DocumentData, getDocs } from "firebase/firestore";
-import { db } from "@/lib/firebase";
 
 export const LandingPageModule = () => {
 
   return (
     <div className="flex flex-col gap-6 justify-center items-center mx-[10vw]">
       <SearchBar />
-      <div className="w-[800px]">
+      <div className="w-[900px]">
         <CarouselIklan />
       </div>
       <h1 className="text-primary font-bold text-[28px] text-start">

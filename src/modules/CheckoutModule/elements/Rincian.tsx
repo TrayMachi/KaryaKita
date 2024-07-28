@@ -7,7 +7,7 @@ export const Rincian: React.FC = () => {
     <div className="w-[700px] mt-3 p-4 flex items-center justify-center">
       <div className="max-w-2xl w-full p-6 rounded-lg">
         <div className="mb-4">
-          <a href="#" className="text-black">&lt; Kembali</a>
+          <a href="/" className="text-black">&lt; Kembali</a>
           <h1 className="text-2xl font-semibold text-purple-600">Checkout</h1>
         </div>
 

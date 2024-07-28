@@ -57,19 +57,22 @@ const chartConfig = {
 
 export function SalesTracking() {
   return (
-    <ChartContainer config={chartConfig} className="h-[200px] mx-auto w-[400px]">
-      <BarChart accessibilityLayer data={chartData}>
-        <CartesianGrid vertical={false} />
-        <XAxis
-          dataKey="status"
-          tickLine={false}
-          tickMargin={10}
-          axisLine={false}
-        />
-        <ChartTooltip content={<ChartTooltipContent />} />
-        <ChartLegend content={<ChartLegendContent />} />
-        <Bar dataKey="count" fill="var(--color-status)" radius={4} />
-      </BarChart>
-    </ChartContainer>
+    <div className="flex flex-col items-center py-8">
+      <h1 className="text-2xl font-semibold mb-4">Sales Tracking</h1>
+      <ChartContainer config={chartConfig} className="h-[300px] mx-auto w-[600px] bg-white p-4 rounded-lg shadow-lg">
+        <BarChart accessibilityLayer data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+          <CartesianGrid vertical={false} strokeDasharray="3 3" />
+          <XAxis
+            dataKey="status"
+            tickLine={false}
+            tickMargin={10}
+            axisLine={false}
+          />
+          <ChartTooltip content={<ChartTooltipContent />} />
+          <ChartLegend content={<ChartLegendContent />} />
+          <Bar dataKey="count" fill="bg-primary" radius={4} />
+        </BarChart>
+      </ChartContainer>
+    </div>
   );
 }

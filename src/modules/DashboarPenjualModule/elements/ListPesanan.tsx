@@ -14,7 +14,7 @@ export const ListPesanan: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-row space-x-8 text-primary">
+    <div className="flex justify-center flex-row space-x-8 text-primary">
         <div className="flex flex-col text-primary">
             <h1 className="text-2xl font-semibold">Pesanan Masuk</h1>
             <ListProduk title="Pesanan Masuk" products={pesananMasuk} />

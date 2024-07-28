@@ -4,6 +4,13 @@ export interface Product {
     price: string;
 }
 
+export interface Order {
+    product: Product;
+    status: 'Masuk' | 'Berlangsung' | 'Selesai';
+    date: string;
+    customerName: string;
+  }
+
 export interface ListProdukProps {
     title: string;
     products: Product[];
